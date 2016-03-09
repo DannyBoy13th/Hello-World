@@ -1,5 +1,9 @@
 package com.goit.filedepository;
 
+import com.goit.musicstore.Guitar;
+
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -7,26 +11,28 @@ import java.util.List;
  */
 public class FileDepository {
 
-    private List<File> Files;
-
-    public List<File> getFiles() {
-        return Files;
-    }
-
-    public void setFiles(List<File> files) {
-        Files = files;
-    }
-
-    public String Content="Content:";
+    public String Content="Displaying RAR Content:";
     public String Txt="AboutMe.doc";
     public String Jpg="Yaremche.jpg";
     public String Mp3="SpanishSahara.mp3";
 
+    private List Files = Arrays.asList(Txt, Jpg, Mp3);
+
+    public String getContent() {
+        return Content;
+    }
+
+    public void setContent(String content) {
+        Content = content;
+    }
+
+    Iterator itr=Files.iterator();
+
     public void Content(){
         System.out.println(Content);
-        System.out.println(Txt);
-        System.out.println(Jpg);
-        System.out.println(Mp3);
+        while(itr.hasNext())
+
+            System.out.println(itr.next());
 
     }
 
